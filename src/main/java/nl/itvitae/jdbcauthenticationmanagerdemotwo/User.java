@@ -18,9 +18,6 @@ public class User {
 
     private boolean enabled;
 
-    @OneToMany(mappedBy = "user")
-    private Set<Authority> authorities = new HashSet<>();
-
     User() {}
 
     public User(String username, String password) {

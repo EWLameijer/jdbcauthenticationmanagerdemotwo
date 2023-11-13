@@ -13,14 +13,10 @@ public class Authority {
 
     private String authority;
 
-    @ManyToOne
-    private User user;
-
     Authority() {}
 
-    public Authority(User user, String authority) {
-        this.username = user.getUsername();
-        this.user = user;
+    public Authority(String username, String authority) {
+        this.username = username;
         this.authority = authority;
     }
 }

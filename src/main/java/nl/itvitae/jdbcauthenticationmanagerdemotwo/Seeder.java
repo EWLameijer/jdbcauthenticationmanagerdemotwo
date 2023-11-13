@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 public class Seeder implements CommandLineRunner {
 
     private final UserRepository userRepository;
+
     private final AuthorityRepository authorityRepository;
 
     private final PasswordEncoder passwordEncoder;
@@ -26,11 +27,11 @@ public class Seeder implements CommandLineRunner {
         if (userRepository.count() == 0) {
             User bill = new User("bill", passwordEncoder.encode("secret"));
             userRepository.save(bill);
-            Authority billsRole = new Authority(bill, "ROLE_ADMIN");
+            Authority billsRole = new Authority(bill.getUsername(), "ROLE_ADMIN");
             authorityRepository.save(billsRole);
             User jane= new User("jane", passwordEncoder.encode("password"));
             userRepository.save(jane);
-            Authority janesRole = new Authority(jane, "ROLE_USER");
+            Authority janesRole = new Authority(jane.getUsername(), "ROLE_USER");
             authorityRepository.save(janesRole);
         }
     }
