@@ -21,9 +21,6 @@ public class Seeder implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        authorityRepository.deleteAll();
-        userRepository.deleteAll();
-
         if (userRepository.count() == 0) {
             User bill = new User("bill", passwordEncoder.encode("secret"));
             userRepository.save(bill);
