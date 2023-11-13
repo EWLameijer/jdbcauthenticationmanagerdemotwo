@@ -26,11 +26,11 @@ public class Seeder implements CommandLineRunner {
         if (userRepository.count() == 0) {
             User bill = new User("bill", passwordEncoder.encode("secret"));
             userRepository.save(bill);
-            Authority billsRole = new Authority(bill, "ADMIN");
+            Authority billsRole = new Authority(bill, "ROLE_ADMIN");
             authorityRepository.save(billsRole);
             User jane= new User("jane", passwordEncoder.encode("password"));
             userRepository.save(jane);
-            Authority janesRole = new Authority(jane, "USER");
+            Authority janesRole = new Authority(jane, "ROLE_USER");
             authorityRepository.save(janesRole);
         }
     }
