@@ -6,9 +6,6 @@ import jakarta.persistence.*;
 @Table(name="authorities")
 public class Authority {
     @Id
-    @GeneratedValue
-    private Long id;
-
     private String username;
 
     private String authority;

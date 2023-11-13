@@ -9,16 +9,13 @@ import java.util.Set;
 @Table(name = "users")
 public class User {
     @Id
-    @GeneratedValue
-    private Long id;
-
     private String username;
 
     private String password;
 
     private boolean enabled;
 
-    User() {} // default constructors ARE necessary
+    User() {} // parameterless constructors ARE necessary
 
     public User(String username, String password) {
         this.username = username;

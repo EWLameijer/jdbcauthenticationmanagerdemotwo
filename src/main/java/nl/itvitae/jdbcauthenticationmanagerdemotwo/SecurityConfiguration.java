@@ -31,9 +31,8 @@ public class SecurityConfiguration {
                 .build();
     }
 
-    // need a passwordEncoder? Yes!
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
-    }
+    } // required!
 }
