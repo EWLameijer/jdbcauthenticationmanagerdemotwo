@@ -18,7 +18,7 @@ public class User {
 
     private boolean enabled;
 
-    User() {}
+    User() {} // default constructors ARE necessary
 
     public User(String username, String password) {
         this.username = username;
